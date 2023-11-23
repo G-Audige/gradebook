@@ -1,0 +1,174 @@
+(1)
+// {import "./App.css";
+// import { useRef } from "react";
+// import { useState } from "react";
+
+// function App() {
+//   const inputRef = useRef(null);
+
+//   const [currentWord, setCurrentWord] = useState("");
+
+//   const handleChange = () => {
+//     let content = inputRef.current.value;
+//     console.log("Content: ", content);
+//     setCurrentWord(content);
+//     console.log(inputRef.current.value);
+//   };
+
+//   // -----> Using Arrays
+//   const possibleCandidates = [
+//     { name: "Superman", gpa: "4.0", cohort: "Metropolis" },
+//     { name: "Batman", gpa: "4.0", cohort: "Gotham" },
+//     { name: "WonderWoman", gpa: "4.0", cohort: "Athens" },
+//     { name: "Mario", gpa: "4.0", cohort: "Italy" },
+//     { name: "Luigi", gpa: "4.0", cohort: "Brooklyn" },
+//   ];
+//   // ----> Mapping
+//   const star_Students = possibleCandidates.map((scholar, n) => {
+//     return (
+//       <div className="recruit" key={n}>
+//         <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+//           <h3>{scholar.name}</h3>
+//           <h3>{scholar.gpa}</h3>
+//           <h3>{scholar.cohort}</h3>
+//         </div>
+//       </div>
+//     );
+//   });
+
+//   // ------> Using Objects
+//   const valedictorian = {
+//     name: "Grogu Yoda",
+//     age: "00",
+//     email: "mandos_baby@jedi.io",
+//   };
+//   // ----> Mapping
+//   const triWiz = Object.keys(valedictorian).map((key, index) => {
+//     return (
+//       <h1 className="grogu" key={index}>
+//         {key}: {valedictorian[key]}
+//       </h1>
+//     );
+//   });
+
+//   return (
+//     <div className="App">
+//       {star_Students}
+//       {/* ---> Calling Array Map */}
+//       {triWiz}
+//       {/* ----> Calling Object Keys */}
+
+//       <input type="text" ref={inputRef} />
+//       <button onClick={handleChange}>Click This</button>
+//       <div>CurrentWord : {currentWord}</div>
+//     </div>
+//   );
+// }
+
+
+(2)
+// export default App;}
+
+
+        {/* <div className="textInput">
+          <div>
+            <label>Name:</label>
+            <input type="text" ref={inputRef} />
+          </div>
+          <div>
+            <label>Class:</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label>GPA:</label>
+            <input type="text" />
+          </div>
+        </div>
+         */}
+        {/* <button onClick={handleName}>Submit</button>
+        <div>{word}</div> */}
+
+(3)
+// function App() {
+//     const inputRef = useRef(null);
+//     const [word, setWord] = useState({
+//       name: '',
+//       class: '',
+//       gpa: '',
+//     });
+  
+//     const students = [
+//       { name: 'a', class: 'a', gpa: 'a' },
+//       { name: 'b', class: 'b', gpa: 'b' },
+//       { name: 'c', class: 'c', gpa: 'c' },
+//       { name: 'd', class: 'd', gpa: 'd' },
+//       { name: 'e', class: 'e', gpa: 'e' },
+//       { name: 'f', class: 'f', gpa: 'f' },
+//     ];
+  
+//     const handleChange = (e) => {
+//       const name = e.target.name;
+//       const value = e.target.value;
+//       console.log(name, value);
+//       // inputRef.current.value = null;
+//     };
+  
+//     const handleSubmit = (e) => {
+//       e.preventDefault();
+//       let content = inputRef.current.value;
+//       setWord(content);
+//       console.log(content);
+//       students.push({ name: content });
+//       // console.log(students);
+//     };
+//     const loadStudent = () => {
+//       return (
+//         <div>
+//           {students.map((student) => {
+//             return (
+//               <div className="student">
+//                 <p>{student.name}</p>
+//                 <p>{student.class}</p>
+//                 <p>{student.gpa}</p>
+//               </div>
+//             );
+//           })}
+//         </div>
+//       );
+//     };
+//     return (
+//       <div className="App">
+//         <div className="inputBar">
+//           <form>
+//             <h3>Name:</h3>{' '}
+//             <input
+//               type="text"
+//               id="name"
+//               name="name"
+//               onChange={handleChange}
+//               ref={(ref) => (inputRef.current.name = ref)}
+//             />
+//             <h3>Class:</h3>{' '}
+//             <input
+//               type="text"
+//               id="class"
+//               name="class"
+//               onChange={handleChange}
+//               ref={(ref) => (inputRef.current.class = ref)}
+//             />
+//             <h3>GPA:</h3>{' '}
+//             <input
+//               type="text"
+//               id="gpa"
+//               name="gpa"
+//               onChange={handleChange}
+//               ref={(ref) => (inputRef.current.gps = ref)}
+//             />
+//             <button onClick={handleSubmit}>Submit</button>
+//           </form>
+//         </div>
+//         <div className="students">{loadStudent()}</div>
+//         {/* <div>{word}</div> */}
+//       </div>
+//     );
+//   }
